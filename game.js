@@ -241,9 +241,10 @@ function gameLoop() {
     } else {
         // --- ระบบศัตรูทั่วไป (ทำงานเฉพาะตอนที่บอสยังไม่เกิด) ---
 
-        // สุ่มเกิดศัตรูใหม่จากขอบบนของจอ (โอกาส 2% ต่อเฟรม)
+        // สุ่มเกิดศัตรูใหม่จากขอบบนของจอ (โอกาส 2% ต่อเฟรม) ความเร็วสุ่ม 1-3 ต่อตัว
         if (Math.random() < 0.02) {
-            enemies.push({ x: Math.random() * canvasElement.width, y: -20, speed: 2, size: player.size });
+            const speed = Math.floor(Math.random() * 3) + 1; // สุ่มจำนวนเต็ม 1, 2 หรือ 3
+            enemies.push({ x: Math.random() * canvasElement.width, y: -20, speed, size: player.size });
         }
 
         canvasCtx.fillStyle = 'pink';
