@@ -189,7 +189,7 @@ function gameLoop() {
 
     // --- ระบบบอส (เกิดที่วินาทีที่ 90) ---
     if (elapsedTime >= 90 && !boss) {
-        boss = { x: canvasElement.width / 2, y: 100, hp: 100, size: 200, bullets: [] };
+        boss = { x: canvasElement.width / 2, y: 100, hp: 100, size: 250, bullets: [] };
     }
 
     if (boss) {
@@ -243,7 +243,7 @@ function gameLoop() {
 
         // สุ่มเกิดศัตรูใหม่จากขอบบนของจอ (โอกาส 2% ต่อเฟรม)
         if (Math.random() < 0.02) {
-            enemies.push({ x: Math.random() * canvasElement.width, y: -20, speed: 3, size: player.size });
+            enemies.push({ x: Math.random() * canvasElement.width, y: -20, speed: 2, size: player.size });
         }
 
         canvasCtx.fillStyle = 'pink';
